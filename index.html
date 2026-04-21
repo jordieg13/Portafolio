@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio CV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="page-wrapper">
+    <header class="top-nav">
+      <span class="brand">JEG</span>
+      <nav>
+        <a href="#about">Sobre mi</a>
+        <a href="#skills">Aptitudes</a>
+        <a href="#abilities">Habilidades</a>
+        <a href="#languages">Idiomas</a>
+        <a href="#experience">Experiencia</a>
+        <a href="#education">Formacion</a>
+        <a href="#projects">Proyectos</a>
+        <a href="#contact">Contacto</a>
+      </nav>
+      <button id="themeToggle" class="theme-toggle" type="button" aria-label="Cambiar tema">Modo oscuro</button>
+    </header>
+
+    <main>
+      <aside class="hero card" id="about">
+        <div class="hero-identity">
+          <img id="profilePhoto" class="profile-photo" src="assets/images/foto-perfil.jpg" alt="Foto de perfil">
+          <h1 id="fullName">Tu Nombre Completo</h1>
+        </div>
+        <p id="headline" class="hero-headline">
+          Especialidad principal y una breve frase de valor profesional.
+        </p>
+        <a id="cvLink" class="btn-outline" href="#" target="_blank" rel="noreferrer">Descargar CV</a>
+      </aside>
+
+      <div class="content-column">
+        <section class="card section-block" id="skills">
+        <div class="section-title">
+          <h2>Sobre mi</h2>
+        </div>
+        <article class="skills-feature skills-text">
+          <p id="mainSkillDescription">
+            Descripción resumida de tu habilidad principal y cómo aporta valor en proyectos.
+          </p>
+        </article>
+        </section>
+
+        <section class="card section-block" id="abilities">
+        <div class="section-title">
+          <h2>Habilidades</h2>
+        </div>
+        <div class="abilities-grid" id="abilityCards"></div>
+        </section>
+
+        <section class="card section-block" id="languages">
+        <div class="section-title">
+          <h2>Idiomas</h2>
+        </div>
+        <div class="language-grid" id="languageCards"></div>
+        </section>
+
+        <section class="card section-block" id="experience">
+        <div class="section-title">
+          <h2>Experiencia</h2>
+        </div>
+        <div class="experience-grid" id="experienceCards"></div>
+        </section>
+
+        <section class="card section-block" id="education">
+        <div class="section-title">
+          <h2>Formación</h2>
+        </div>
+        <div class="education-grid" id="educationCards"></div>
+        </section>
+
+        <section class="card section-block" id="projects">
+        <div class="section-title">
+          <h2>Proyectos</h2>
+        </div>
+        <div class="projects-grid" id="projectCards"></div>
+        </section>
+
+        <section class="card section-block" id="contact">
+        <div class="section-title">
+          <h2>Contacto</h2>
+        </div>
+        <div class="contact-grid">
+          <div class="skills-feature">
+            <h3>Perfil</h3>
+            <p id="contactSummary">Disponible para oportunidades en desarrollo web y multiplataforma.</p>
+          </div>
+          <div class="contact-actions">
+            <a id="phoneLink" href="tel:+34000000000">+34 000000000</a>
+            <a id="emailLink" href="mailto:correo@ejemplo.com">correo@ejemplo.com</a>
+            <a id="locationText" href="#">Ciudad, Provincia</a>
+            <a id="linkedinLink" href="#" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a id="portfolioLink" href="#" target="_blank" rel="noreferrer">Sitio web / GitHub</a>
+          </div>
+        </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <p id="footerText">Tu Nombre - Portafolio CV</p>
+    </footer>
+  </div>
+
+  <script src="data/profile.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
