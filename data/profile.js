@@ -57,7 +57,7 @@ const portfolioData = {
       name: "Portafolio CV Web",
       stack: "HTML, CSS y JavaScript",
       description: "Landing personal responsive para presentar perfil profesional, aptitudes, experiencia, formacion e informacion de contacto.",
-      github: ""
+      github: "https://github.com/jordieg13/Portafolio"
     },
     {
       name: "Proyecto en desarrollo",
