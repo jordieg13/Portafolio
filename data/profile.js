@@ -19,9 +19,9 @@ const portfolioData = {
     { title: "HTML"}
   ],
   languages: [
-    { name: "Espanol", level: "Idioma nativo" },
-    { name: "Catalan", level: "Idioma nativo" },
-    { name: "Ingles", level: "B2 - Intermedio avanzado" }
+    { name: "Español", level: "Idioma nativo" },
+    { name: "Catalán", level: "Idioma nativo" },
+    { name: "Inglés", level: "B2 - Intermedio avanzado" }
   ],
   experience: [
     {
