@@ -105,10 +105,15 @@ main {
 }
 
 .card {
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.06);
   border: 1px solid var(--line);
   background: var(--surface);
   border-radius: var(--radius-xl);
   padding: 30px;
+}
+
+[data-theme="dark"] .card {
+  box-shadow: 0 2px 20px 0 rgba(0,0,0,0.25);
 }
 
 .brand-logo {
@@ -161,7 +166,9 @@ main {
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid var(--line);
-  background: var(--surface-strong);
+  padding: 3px;
+  background: linear-gradient(135deg, var(--accent), #a78bfa);
+  border: none;
 }
 
 .hero-tag {
@@ -226,7 +233,7 @@ main {
 }
 
 .section-title h2 {
-  font-family: "Playfair Display", serif;
+  font-family: "Inter", serif;
   font-size: 1.4rem;
 }
 
@@ -317,6 +324,16 @@ main {
 #abilities .skill-mini p {
   font-size: 0.8rem;
   line-height: 1.3;
+}
+
+.exp-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-left: 3px solid var(--accent);
+}
+
+.exp-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
 }
 
 .exp-card h3 {
@@ -434,6 +451,17 @@ main {
 
   .card {
     padding: 24px;
+  }
+
+  .section-block {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  .section-block.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .experience-grid,

@@ -152,5 +152,13 @@ function hydratePortfolio(data) {
   setHref("portfolioLink", data.contact?.portfolio);
 }
 
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) e.target.classList.add("visible");
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll(".section-block").forEach(el => observer.observe(el));
+
 hydratePortfolio(portfolioData);
 setupThemeToggle();
