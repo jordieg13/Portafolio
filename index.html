@@ -28,6 +28,7 @@
 
     <main>
       <aside class="hero card" id="about">
+        <canvas id="heroCanvas"></canvas>
         <div class="hero-identity">
           <img id="profilePhoto" class="profile-photo" src="assets/images/foto-perfil.jpg" alt="Foto de perfil">
           <h1 id="fullName">Tu Nombre Completo</h1>
@@ -57,14 +58,13 @@
           <div class="experience-grid" id="experienceCards"></div>
           </section>
 
-
         <section class="card section-block" id="projects">
         <div class="section-title">
           <h2>Proyectos</h2>
         </div>
         <div class="projects-grid" id="projectCards"></div>
         </section>
-        
+
         <section class="card section-block" id="languages">
         <div class="section-title">
           <h2>Idiomas</h2>
@@ -72,18 +72,18 @@
         <div class="language-grid" id="languageCards"></div>
         </section>
 
+        <section class="card section-block" id="education">
+          <div class="section-title">
+            <h2>Formación</h2>
+          </div>
+          <div class="education-grid" id="educationCards"></div>
+        </section>
+        
         <section class="card section-block" id="abilities">
         <div class="section-title">
           <h2>Habilidades</h2>
         </div>
         <div class="abilities-grid" id="abilityCards"></div>
-        </section>
-
-        <section class="card section-block" id="education">
-        <div class="section-title">
-          <h2>Formación</h2>
-        </div>
-        <div class="education-grid" id="educationCards"></div>
         </section>
 
         <section class="card section-block" id="contact">
@@ -111,8 +111,10 @@
       <p id="footerText">Tu Nombre - Portafolio CV</p>
     </footer>
   </div>
-
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="data/profile.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/heroAnimation.js"></script>
 </body>
 </html>
