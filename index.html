@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portafolio CV</title>
+  <title>Jordi EG</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -11,19 +11,52 @@
 </head>
 <body>
   <div class="page-wrapper">
-    <header class="top-nav">
+    <header class="top-nav" id ="topNav">
       <img src="assets/images/logo.png" alt="JEG Logo" class="brand-logo">
       <nav>
         <a href="#about">Sobre mi</a>
         <a href="#experience">Experiencia</a>
         <a href="#projects">Proyectos</a>
         <a href="#languages">Idiomas</a>
-        <a href="#skills">Aptitudes</a>
         <a href="#education">Formacion</a>
         <a href="#abilities">Habilidades</a>
         <a href="#contact">Contacto</a>
       </nav>
-      <button id="themeToggle" class="theme-toggle" type="button" aria-label="Cambiar tema">Modo oscuro</button>
+
+      <div class="nav-divider"></div>
+ 
+      <!-- Acciones -->
+      <div class="nav-actions">
+        <!-- Botón CV -->
+        <a href="#" class="btn-cv" target="_blank" rel="noreferrer">
+          <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          CV
+        </a>
+   
+        <!-- Toggle tema -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+          <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+   
+        <!-- Hamburger móvil -->
+        <button class="hamburger" id="hamburger" aria-label="Menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+   
+      <!-- Menú móvil desplegable -->
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="#about">Sobre mí</a>
+        <a href="#skills">Aptitudes</a>
+        <a href="#abilities">Habilidades</a>
+        <a href="#languages">Idiomas</a>
+        <a href="#experience">Experiencia</a>
+        <a href="#education">Formación</a>
+        <a href="#projects">Proyectos</a>
+        <a href="#contact">Contacto</a>
+      </div>
+    </nav>
     </header>
 
     <div id="rubikContainer"></div>

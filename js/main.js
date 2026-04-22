@@ -16,9 +16,6 @@ function setImageSource(id, value) {
 function applyTheme(theme) {
   document.documentElement.setAttribute("data-theme", theme);
   const toggle = document.getElementById("themeToggle");
-  if (toggle) {
-    toggle.textContent = theme === "dark" ? "Modo claro" : "Modo oscuro";
-  }
 }
 
 function setupThemeToggle() {
@@ -36,6 +33,43 @@ function setupThemeToggle() {
     applyTheme(nextTheme);
     localStorage.setItem("theme", nextTheme);
   });
+   // Scroll → clase en nav
+   const nav = document.getElementById("topNav");
+   window.addEventListener("scroll", () => {
+     nav.classList.toggle("scrolled", window.scrollY > 20);
+   }, { passive: true });
+
+   // Active link al hacer scroll
+   const sections = document.querySelectorAll("[id]");
+   const navLinks = document.querySelectorAll(".top-nav nav a");
+
+   const io = new IntersectionObserver((entries) => {
+     entries.forEach(e => {
+       if (e.isIntersecting) {
+         navLinks.forEach(a => a.classList.remove("active"));
+         const active = document.querySelector(`.top-nav nav a[href="#${e.target.id}"]`);
+         if (active) active.classList.add("active");
+       }
+     });
+   }, { threshold: 0.5 });
+
+   sections.forEach(s => io.observe(s));
+
+   // Hamburger
+   const hamburger = document.getElementById("hamburger");
+   const mobileMenu = document.getElementById("mobileMenu");
+
+   hamburger.addEventListener("click", () => {
+     hamburger.classList.toggle("open");
+     mobileMenu.classList.toggle("open");
+   });
+
+   mobileMenu.querySelectorAll("a").forEach(a => {
+     a.addEventListener("click", () => {
+       hamburger.classList.remove("open");
+       mobileMenu.classList.remove("open");
+     });
+   });
 }
 
 function renderExperience(cards) {
