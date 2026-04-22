@@ -235,6 +235,12 @@ main {
   gap: 12px;
 }
 
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  gap: 12px;
+}
+
 .language-grid,
 .education-grid {
   display: grid;
@@ -242,11 +248,6 @@ main {
   gap: 12px;
 }
 
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(220px, 1fr));
-  gap: 12px;
-}
 
 .abilities-grid {
   display: grid;
