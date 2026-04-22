@@ -111,6 +111,15 @@ main {
   padding: 30px;
 }
 
+.brand-logo {
+  height: 36px;
+  width: auto;
+}
+
+[data-theme="dark"] .brand-logo {
+  filter: invert(1); 
+}
+
 .hero {
   text-align: center;
   padding: 40px 28px;
@@ -379,6 +388,9 @@ main {
 }
 
 @media (max-width: 760px) {
+  #rubikContainer {
+    display: none;
+  }
   main {
     grid-template-columns: 1fr;
     gap: 24px;

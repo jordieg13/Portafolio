@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400">
+  <defs>
+    <linearGradient id="silver" x1="0" x2="1">
+      <stop offset="0%" stop-color="#f5f5f5"/>
+      <stop offset="50%" stop-color="#cfcfcf"/>
+      <stop offset="100%" stop-color="#ffffff"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" x2="1">
+      <stop offset="0%" stop-color="#1fb6ff"/>
+      <stop offset="100%" stop-color="#0057ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="400" fill="#05070b"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="80" y="235" font-size="120" fill="url(#blue)" font-family="Arial, sans-serif">&lt;</text>
+    <text x="1040" y="235" font-size="120" fill="url(#blue)" font-family="Arial, sans-serif">/&gt;</text>
+    <path d="M360 90 v170 q0 50-55 50 h-55" fill="none" stroke="url(#silver)" stroke-width="28"/>
+    <path d="M470 95 h160 M470 200 h140 M470 305 h160" fill="none" stroke="url(#silver)" stroke-width="28"/>
+    <path d="M505 200 h95" fill="none" stroke="url(#blue)" stroke-width="20"/>
+    <path d="M790 115 a95 95 0 1 0 0 170 h65" fill="none" stroke="url(#silver)" stroke-width="28"/>
+    <path d="M850 235 h95 v55" fill="none" stroke="url(#blue)" stroke-width="28"/>
+  </g>
+</svg>
