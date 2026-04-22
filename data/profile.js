@@ -71,7 +71,7 @@ const portfolioData = {
     phoneRaw: "+34655554619",
     email: "jordi16e@gmail.com",
     location: "Mollet del Valles, Barcelona",
-    locationMap: "#",
+    locationMap: "https://www.google.com/maps/place/Mollet+del+Vall%C3%A8s,+Barcelona/@41.5385708,2.2020954,15z/data=!3m1!4b1!4m6!3m5!1s0x12a4bed843a098b7:0x12c8221d86abef15!8m2!3d41.542551!4d2.2113698!16s%2Fg%2F11cn63l5y9?entry=ttu&g_ep=EgoyMDI2MDQxOS4wIKXMDSoASAFQAw%3D%3D",
     summary: "Perfil en transicion al sector tecnologico con base en diseño de aplicaciones web y multiplataforma, combinando experiencia internacional y enfoque en desarrollo de software eficiente.",
     linkedin: "#",
     portfolio: "https://github.com/jordieg13"
