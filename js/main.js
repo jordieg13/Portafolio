@@ -15,7 +15,6 @@ function setImageSource(id, value) {
 
 function applyTheme(theme) {
   document.documentElement.setAttribute("data-theme", theme);
-  const toggle = document.getElementById("themeToggle");
 }
 
 function setupThemeToggle() {
@@ -33,43 +32,50 @@ function setupThemeToggle() {
     applyTheme(nextTheme);
     localStorage.setItem("theme", nextTheme);
   });
-   // Scroll → clase en nav
-   const nav = document.getElementById("topNav");
-   window.addEventListener("scroll", () => {
-     nav.classList.toggle("scrolled", window.scrollY > 20);
-   }, { passive: true });
+}
 
-   // Active link al hacer scroll
-   const sections = document.querySelectorAll("[id]");
-   const navLinks = document.querySelectorAll(".top-nav nav a");
+function setupNav() {
+  // Scroll → clase en nav
+  const nav = document.getElementById("topNav");
+  window.addEventListener("scroll", () => {
+    nav.classList.toggle("scrolled", window.scrollY > 20);
+  }, { passive: true });
 
-   const io = new IntersectionObserver((entries) => {
-     entries.forEach(e => {
-       if (e.isIntersecting) {
-         navLinks.forEach(a => a.classList.remove("active"));
-         const active = document.querySelector(`.top-nav nav a[href="#${e.target.id}"]`);
-         if (active) active.classList.add("active");
-       }
-     });
-   }, { threshold: 0.5 });
+  // Hamburger
+  const hamburger = document.getElementById("hamburger");
+  const mobileMenu = document.getElementById("mobileMenu");
 
-   sections.forEach(s => io.observe(s));
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("open");
+    mobileMenu.classList.toggle("open");
+  });
 
-   // Hamburger
-   const hamburger = document.getElementById("hamburger");
-   const mobileMenu = document.getElementById("mobileMenu");
+  mobileMenu.querySelectorAll("a").forEach(a => {
+    a.addEventListener("click", () => {
+      hamburger.classList.remove("open");
+      mobileMenu.classList.remove("open");
+    });
+  });
 
-   hamburger.addEventListener("click", () => {
-     hamburger.classList.toggle("open");
-     mobileMenu.classList.toggle("open");
-   });
+  // Active link al hacer scroll
+  const navLinks = document.querySelectorAll(".top-nav nav a, .mobile-menu a");
+  const sections = document.querySelectorAll("section[id], aside[id]");
 
-   mobileMenu.querySelectorAll("a").forEach(a => {
-     a.addEventListener("click", () => {
-       hamburger.classList.remove("open");
-       mobileMenu.classList.remove("open");
-     });
-   });
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navLinks.forEach(a => a.classList.remove("active"));
+        document.querySelectorAll(
+          `.top-nav nav a[href="#${e.target.id}"], .mobile-menu a[href="#${e.target.id}"]`
+        ).forEach(a => a.classList.add("active"));
+      }
+    });
+  }, {
+    threshold: 0,
+    rootMargin: "-40% 0px -55% 0px"
+  });
+
+  sections.forEach(s => io.observe(s));
 }
 
 function renderExperience(cards) {
@@ -186,13 +192,16 @@ function hydratePortfolio(data) {
   setHref("portfolioLink", data.contact?.portfolio);
 }
 
-const observer = new IntersectionObserver((entries) => {
+// Animación de entrada para secciones
+const sectionObserver = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) e.target.classList.add("visible");
   });
 }, { threshold: 0.1 });
 
-document.querySelectorAll(".section-block").forEach(el => observer.observe(el));
+document.querySelectorAll(".section-block").forEach(el => sectionObserver.observe(el));
 
+// Init
 hydratePortfolio(portfolioData);
 setupThemeToggle();
+setupNav();
