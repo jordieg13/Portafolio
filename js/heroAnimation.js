@@ -39,6 +39,9 @@
     camera.updateProjectionMatrix();
   }
 
+  const ro = new ResizeObserver(() => resize());
+  ro.observe(canvas.parentElement);
+
   window.addEventListener("resize", resize);
   // Espera al paint completo antes del primer resize
   window.addEventListener("load", () => setTimeout(resize, 50));
