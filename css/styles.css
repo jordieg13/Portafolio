@@ -50,6 +50,7 @@ body {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   position: sticky;
+  isolation: isolate;
   top: 16px;
   z-index: 100;
   box-shadow: 0 2px 24px rgba(0,0,0,0.06);
@@ -610,6 +611,8 @@ main {
     padding: 40px 22px;
     min-height: 340px;
     overflow: hidden;
+    top: 0;
+    margin-bottom: 0;
   }
 
   .hero-identity {
@@ -622,10 +625,61 @@ main {
     max-width: 620px;
   }
 
-  .top-nav {
-    flex-direction: column;
-    gap: 8px;
-    border-radius: var(--radius-lg);
+  @media (max-width: 760px) {
+    .top-nav {
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 999px;
+      padding: 8px 10px 8px 16px;
+      gap: 0;
+      position: sticky;
+      top: 16px;
+      z-index: 100;
+    }
+  
+    /* Cuando el menú está abierto, cuadra la parte inferior del nav */
+    .top-nav:has(.mobile-menu.open) {
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    }
+  
+    .mobile-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      gap: 4px;
+      padding: 12px 12px 16px;
+      background: color-mix(in srgb, var(--surface) 95%, transparent);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--line);
+      border-top: none;
+      border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      z-index: 99;
+    }
+  
+    .mobile-menu.open {
+      display: flex;
+    }
+  
+    .mobile-menu a {
+      text-decoration: none;
+      color: var(--text-soft);
+      font-size: 0.9rem;
+      padding: 10px 14px;
+      border-radius: var(--radius-md);
+      transition: background 0.15s, color 0.15s;
+    }
+  
+    .mobile-menu a:hover {
+      background: color-mix(in srgb, var(--accent) 8%, transparent);
+      color: var(--text);
+    }
   }
 
   .top-nav nav {
@@ -633,9 +687,20 @@ main {
     justify-content: center;
   }
 
+  .brand-logo {
+    height: 40px;               /* un poco más pequeño */
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
   .theme-toggle {
-    width: 100%;
-    max-width: 220px;
+    width: 36px;
+    height: 36px;
+    max-width: unset;           /* cancela el max-width anterior */
   }
 
   .card {
