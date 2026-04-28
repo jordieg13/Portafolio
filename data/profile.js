@@ -64,6 +64,12 @@ const portfolioData = {
       stack: "JavaScript / PostgreSQL",
       description: "Working in progress.",
       github: ""
+    },
+    {
+      name: "Aplicación climática",
+      stack: "HTML, CSS y JavaScript · API REST",
+      description: "Aplicación web que consulta el clima en tiempo real de cualquier ciudad mediante una API meteorológica externa.",
+      github: "https://github.com/jordieg13/AppClima"
     }
   ],
   contact: {
