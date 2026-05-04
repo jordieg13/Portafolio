@@ -480,9 +480,65 @@ main {
 }
 
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  display: flex;
   gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 8px;
+  scrollbar-width: none;
+}
+
+.projects-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.projects-grid .exp-card {
+  flex: 0 0 280px;
+  scroll-snap-align: start;
+}
+
+.projects-nav {
+  display: flex;
+  gap: 6px;
+}
+
+.proj-arrow {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.18s, color 0.18s, opacity 0.18s;
+  line-height: 1;
+}
+
+.proj-arrow:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.proj-arrow:disabled {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+
+#projects.card {
+  overflow: visible;
+  padding-bottom: 28px;
+  padding-top: 28px;
+}
+
+#projects .projects-grid {
+  padding: 4px 4px 12px;
+  margin: -4px -4px 0;
 }
 
 .abilities-grid {
@@ -719,7 +775,6 @@ main {
   }
 
   .experience-grid,
-  .projects-grid,
   .contact-grid,
   .abilities-grid,
   .language-grid,

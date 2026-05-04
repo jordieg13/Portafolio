@@ -201,7 +201,44 @@ const sectionObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll(".section-block").forEach(el => sectionObserver.observe(el));
 
+document.querySelectorAll(".projects-grid").forEach(el => {
+  el.addEventListener("wheel", (e) => {
+    if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) return;
+    e.preventDefault();
+    el.scrollBy({ left: e.deltaY * 1.5, behavior: "smooth" });
+  }, { passive: false });
+});
+
+function setupProjectsNav() {
+  const grid = document.getElementById("projectCards");
+  const prev = document.getElementById("projPrev");
+  const next = document.getElementById("projNext");
+  if (!grid || !prev || !next) return;
+
+  const cardWidth = () => {
+    const card = grid.querySelector(".exp-card");
+    return card ? card.offsetWidth + 12 : 292;
+  };
+
+  const updateButtons = () => {
+    prev.disabled = grid.scrollLeft <= 0;
+    next.disabled = grid.scrollLeft + grid.offsetWidth >= grid.scrollWidth - 2;
+  };
+
+  prev.addEventListener("click", () => {
+    grid.scrollBy({ left: -cardWidth(), behavior: "smooth" });
+  });
+
+  next.addEventListener("click", () => {
+    grid.scrollBy({ left: cardWidth(), behavior: "smooth" });
+  });
+
+  grid.addEventListener("scroll", updateButtons, { passive: true });
+  updateButtons();
+}
+
 // Init
 hydratePortfolio(portfolioData);
 setupThemeToggle();
 setupNav();
+setupProjectsNav();

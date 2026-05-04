@@ -76,6 +76,12 @@ const portfolioData = {
       stack: "HTML, CSS y JavaScript · API REST",
       description: "Aplicación web que convierte vídeos públicos en texto a partir de una URL.",
       github: "https://github.com/jordieg13/TranscribirVideos"
+    },
+    {
+      name: "Coffee finder",
+      stack: "HTML, CSS y JavaScript · Google Places API",
+      description: "Aplicación que te ayuda a encontrar cafeterias cercanas a tu ubicación.",
+      github: "https://github.com/jordieg13/CafeteriasEnTuZona"
     }
   ],
   contact: {
